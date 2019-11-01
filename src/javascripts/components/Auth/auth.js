@@ -11,7 +11,7 @@ const signMeIn = () => {
 };
 
 const loginButton = () => {
-  const domString = `<button class="btn btn-danger" id="google-auth">
+  const domString = `<button class="btn btn-primary" id="google-auth">
     <img src=${goobutt} />
   </button>`;
 
