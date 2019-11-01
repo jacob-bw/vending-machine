@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const authDiv = $('#auth');
-const logoutButton = $('#navbar-button-logout');
+const logoutButton = $('#logoutNavbarFunction');
 const stockDiv = $('#stock');
 
 const logoutEvent = () => {
@@ -12,7 +12,7 @@ const logoutEvent = () => {
     firebase.auth().signOut()
       .then(() => {
         authDiv.classList.add('hide');
-        logoutButton.classList.add('hide');
+        logoutButton.classList.remove('hide');
         stockDiv.classList.add('hide');
       }).catch((err) => console.error('you still logged in', err));
   });

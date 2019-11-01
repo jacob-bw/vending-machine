@@ -4,7 +4,7 @@ import 'firebase/auth';
 
 const authDiv = $('#auth');
 const stockDiv = $('#stock');
-const logoutNavbar = $('#logout-navbar-function');
+const logoutNavbar = $('#logoutNavbarFunction');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
