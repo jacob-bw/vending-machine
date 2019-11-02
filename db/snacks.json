@@ -1,0 +1,42 @@
+{
+  "snack1" : {
+    "imageUrl" : "https://www.dollargeneral.com/media/catalog/product/cache/image/700x700/e9c3970ab036de70892d86c6d221abfe/0/0/00028400589864_0.jpg",
+    "name": "Cheetos",
+    "price": 75,
+    "currentStocked": 8,
+    "lifetimeNum": 27,
+    "uid": "Db892s4Gj8W3PeGvJhFWfejZiKe2"
+  },
+  "snack2" : {
+    "imageUrl" : "https://mobileimages.lowes.com/product/converted/040000/040000001027.jpg?size=xl",
+    "name": "snickers",
+    "price": 100,
+    "currentStocked": 5,
+    "lifetimeNum": 50,
+    "uid": "Db892s4Gj8W3PeGvJhFWfejZiKe2"
+  },
+  "snack3" : {
+    "imageUrl" : "https://cdn.shopify.com/s/files/1/0761/6607/products/sour-gummy-bears-bulk.jpg?v=1427479141",
+    "name": "weed gummies",
+    "price": 420,
+    "currentStocked": 3,
+    "lifetimeNum": 50,
+    "uid": "Db892s4Gj8W3PeGvJhFWfejZiKe2"
+  },
+  "snack4" : {
+    "imageUrl" : "https://i5.walmartimages.com/asr/2b4a8c7c-941f-4575-b1fe-2479c8024077_1.b3c876a51211d14cbdd5fc631995809c.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    "name": "apple",
+    "price": 50,
+    "currentStocked": 2,
+    "lifetimeNum": 15,
+    "uid": "Db892s4Gj8W3PeGvJhFWfejZiKe2"
+  },
+  "snack5" : {
+    "imageUrl" : "https://thumbor.thedailymeal.com/FopUqR4H4YG8BRkcFAttPYnNbEw=/870x565/filters:focal(895x584:896x585)/https://www.thedailymeal.com/sites/default/files/story/2018/CropFritosiStock-159147659.jpg",
+    "name": "loose fritos",
+    "price": 75,
+    "currentStocked": 6,
+    "lifetimeNum": 34,
+    "uid": "42069"
+  }
+}
