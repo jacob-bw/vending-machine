@@ -1,17 +1,19 @@
 import smash from '../../helpers/data/smash';
-
-import './machine.scss';
+import utilities from '../../helpers/utilities';
+import snack from '../Snacks/snacks';
 
 const buildTheMachine = () => {
   smash.getCompleteMachine()
-    .then((singleMachine) => console.log('1 machine', singleMachine))
+    .then((positions) => {
+      let domString = '<h2>Vending Machine</h2>';
+      domString += '<div id="snack-section" class="d-flex flex-wrap">';
+      positions.forEach((position) => {
+        domString += snack.makeASnack(position);
+      });
+      domString += '</div>';
+      utilities.printToDom('stock', domString);
+    })
     .catch((error) => console.error(error));
-  // 1. getMachines - returns first machine (hard coding) - DONE
-  // 2. use machineId to get all positions for that machine - DONE
-  // 3. use machineId to get all snack positions - DONE
-  // 4. use uid of snackPositions/positions to get available snacks for machine
-  // 5. Smash em - return an array of posiitons (in order A1, A2, A3, etc)
-  // so positions should have position.snack
 };
 
 export default { buildTheMachine };
