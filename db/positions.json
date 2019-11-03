@@ -4,11 +4,6 @@
     "machineId": "machine1",
     "uid": "Db892s4Gj8W3PeGvJhFWfejZiKe2"    
   },
-  "position1": {
-    "position": "A1",
-    "machineId": "machine1",
-    "uid": "Db892s4Gj8W3PeGvJhFWfejZiKe2"    
-  },
   "position2": {
     "position": "A2",
     "machineId": "machine1",
@@ -52,6 +47,6 @@
   "position10": {
     "position": "A1",
     "machineId": "12345",
-    "uid": 42069    
+    "uid": "42069"
   }
 }
