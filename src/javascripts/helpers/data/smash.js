@@ -50,10 +50,10 @@ const getSnacksWithPositions = (uid) => new Promise((resolve, reject) => {
               if (getSnackPosition) {
                 const getPosition = positions.find((x) => x.id === getSnackPosition.positionId);
                 newSnack.position = getPosition;
-                newSnack.snackPositionID = getSnackPosition.id;
+                newSnack.snackPositionId = getSnackPosition.id;
               } else {
                 newSnack.position = {};
-                newSnack.snackPositionID = '';
+                newSnack.snackPositionId = '';
               }
               newSnacks.push(newSnack);
             });
@@ -64,4 +64,24 @@ const getSnacksWithPositions = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getCompleteMachine, getSnacksWithPositions };
+const getAvailablePositions = () => new Promise((resolve, reject) => {
+  machineData.getMachine().then((machine) => {
+    positionData.getAllPositionsByMachineId(machine.id).then((positions) => {
+      snackPositionData.getAllSnackPositionsByMachineId(machine.id).then((snackPositions) => {
+        const newPositions = [];
+        positions.forEach((position) => {
+          const newPosition = { ...position };
+          const getSnackPosition = snackPositions.find((x) => x.positionId === newPosition.id);
+          if (!getSnackPosition) {
+            newPosition.machineId = machine.id;
+            newPositions.push(newPosition);
+          }
+        });
+        resolve(newPositions);
+      });
+    });
+  })
+    .catch((error) => reject(error));
+});
+
+export default { getCompleteMachine, getSnacksWithPositions, getAvailablePositions };
