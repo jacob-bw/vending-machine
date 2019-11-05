@@ -50,8 +50,10 @@ const getSnacksWithPositions = (uid) => new Promise((resolve, reject) => {
               if (getSnackPosition) {
                 const getPosition = positions.find((x) => x.id === getSnackPosition.positionId);
                 newSnack.position = getPosition;
+                newSnack.snackPositionID = getSnackPosition.id;
               } else {
                 newSnack.position = {};
+                newSnack.snackPositionID = '';
               }
               newSnacks.push(newSnack);
             });
