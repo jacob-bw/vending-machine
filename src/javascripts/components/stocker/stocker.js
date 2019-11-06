@@ -56,6 +56,7 @@ const addNewSnack = (e) => {
     lifetimeNum: 0,
     uid,
   };
+
   snackData.addNewSnack(newSnack)
     .then(() => {
       $('#exampleModal').modal('hide');
@@ -63,6 +64,20 @@ const addNewSnack = (e) => {
       buildTheStocker(uid);
     })
     .catch((error) => console.error(error));
+};
+
+const quickStock = (e) => {
+  e.stopImmediatePropagation();
+  const snackId = e.target.id.split('snack-')[1];
+  snackData.restock(snackId, 5)
+    .then(() => {
+      const { uid } = firebase.auth().currentUser;
+      // eslint-disable-next-line no-use-before-define
+      buildTheStocker(uid);
+      machine.buildTheMachine();
+    })
+    .catch((error) => console.error(error));
+  console.log(snackId);
 };
 
 const buildTheStocker = (uid) => {
@@ -81,6 +96,7 @@ const buildTheStocker = (uid) => {
       utilities.printToDom('stock', domString);
       $('#stock').on('click', '.delete-snack-position', deleteFromMachine);
       $('#stock').on('click', '.addSnackPosition', addToMachine);
+      $('#stock').on('click', '.quick-stock', quickStock);
       $('#add-new-snack').click(addNewSnack);
     })
     .catch((error) => console.error(error));
