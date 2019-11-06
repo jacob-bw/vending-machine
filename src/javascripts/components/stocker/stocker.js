@@ -77,7 +77,6 @@ const quickStock = (e) => {
       machine.buildTheMachine();
     })
     .catch((error) => console.error(error));
-  console.log(snackId);
 };
 
 const buildTheStocker = (uid) => {

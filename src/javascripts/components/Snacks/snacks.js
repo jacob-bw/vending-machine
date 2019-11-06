@@ -9,16 +9,17 @@ const makeASnack = (position) => {
       <div class="card-body">
         <h5 class="card-title">${position.snack.name}</h5>
         <p class="card-text">$${position.snack.price / 100}</p>
-        <p class="card-text">${position.position}</p>
+        <p class="card-text">${position.snack.currentStocked} available</p>
       </div>
+      <div class="card-footer"><button class="btn btn-info buy-snack ${position.snack.currentStocked < 1 ? 'disabled' : ''}" id="buy-${position.snack.id}">Purchase Snack ${position.position}</button></div>
     </div>`;
   } else {
     domString += `
     <div class="col-4">
       <div class="card-body">
         <h5 class="card-text">EMPTY</h5>
-        <p class="card-text">${position.position}</p>
       </div>
+      <div class="card-footer">${position.position}</div>
     </div>`;
   }
 
